@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="telaPrincipal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Agile Account - Painel</title>
+</head>
+<body>    <header>
+        <div class="header-content">
+            <img src="IMAGENS/LogoTrabalho.png" alt="Agile Logo" class="header-logo">
+        </div>
+    </header>
+
+    <div id="welcomeMessage" class="welcome-message"></div>
+
+    <div class="main-container">
+        <div class="center-content">
+            <div id="valorMensalCard" class="card">
+                <h2><i class="fas fa-money-bill-wave"></i> DEFINA O VALOR MENSAL</h2>
+                <div class="form-group">
+                    <input type="number" id="valorMensalInput" placeholder="Ex: 3000" min="0" step="0.01"/>
+                    <button id="salvarValorMensal" class="btn-editar">
+                        <i class="fas fa-save"></i> Salvar
+                    </button>
+                </div>
+            </div>
+
+            <div id="valorMensalDisplay" class="valor-mensal">
+                <i class="fas fa-coins"></i>
+                <span>R$ <span id="valorExibido">0.00</span></span>
+                <button id="editarValor" class="editar-valor">
+                    <i class="fas fa-edit"></i> Editar
+                </button>
+                <div id="lowBalanceWarning" class="warning-message" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i> CUIDADO, SEU SALDO ESTÁ ACABANDO
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-receipt"></i> DESPESAS</h2>
+                <div class="form-group">
+                    <label for="descricao">
+                        <i class="fas fa-tag"></i> DESCRIÇÃO:
+                    </label>
+                    <input type="text" id="descricao" placeholder="Ex: Conta de água" />
+                </div>
+                <div class="form-group">
+                    <label for="valor">
+                        <i class="fas fa-dollar-sign"></i> VALOR R$:
+                    </label>
+                    <input type="number" id="valor" placeholder="Ex: 80" min="0" step="0.01"/>
+                </div>
+                <button id="adicionarDespesa" class="btn-editar">
+                    <i class="fas fa-plus-circle"></i> ADICIONAR DESPESA
+                </button>
+
+                <div class="expense-list">
+                    <h3><i class="fas fa-list"></i> Lista de Despesas</h3>
+                    <table id="tabelaDespesas" class="expense-table">
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Valor (R$)</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Despesas serão exibidas aqui -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="telaPrincipal.js"></script>
+</body>
+</html>

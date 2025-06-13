@@ -1,0 +1,473 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(145deg, #f4f4f4 0%, #e0e0e0 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-logo {
+    max-width: 200px;
+    height: auto;
+}
+
+.welcome-message {
+    color: #4CAF50;
+    font-size: 2.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+@keyframes floatLogo {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px); /* Increased floating movement */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.welcome-message {
+    color: #4CAF50;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 5px;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.logo-container {
+    flex: 0 0 auto;
+    padding: 20px;
+}
+
+.logo-img {
+    max-width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.center-content {
+    flex: 1;
+    max-width: 800px;
+}
+
+.valor-mensal-titulo {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.valor-mensal {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px;
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin: 15px auto 20px auto;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.valor-mensal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.editar-valor {
+    background-color: #0a5611;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.5em;
+    transition: all 0.3s ease;
+}
+
+.editar-valor:hover {
+    background-color: #0d6b15;
+    transform: scale(1.05);
+}
+
+main {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: left;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #4CAF50;
+    border-radius: 2px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    text-align: left;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 5px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    outline: none;
+}
+
+.btn-editar {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-editar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn-editar:hover:after {
+    left: 100%;
+}
+
+.btn-editar:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.btn-editar:active {
+    transform: translateY(0);
+}
+
+.expense-list {
+    margin-top: 30px;
+}
+
+.expense-list h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.expense-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-top: 15px;
+    table-layout: fixed;
+}
+
+.expense-table th,
+.expense-table td {
+    padding: 15px 25px;
+    text-align: left;
+}
+
+.expense-table td {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.expense-table td:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.expense-table td:last-child {
+    padding: 8px 15px; /* Reduced cell padding */
+    text-align: center;
+    width: 30%;
+}
+
+.expense-table th:first-child,
+.expense-table td:first-child {
+    width: 40%;
+    padding-left: 30px;
+}
+
+.expense-table th:nth-child(2),
+.expense-table td:nth-child(2) {
+    width: 30%;
+    text-align: center;
+}
+
+.expense-table th:last-child {
+    text-align: center;
+    padding: 8px 15px; /* Match the cell padding */
+}
+
+.expense-table tr {
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.expense-table tr:hover td {
+    background: rgba(255, 255, 255, 0.95);
+    transform: scale(1.01);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.expense-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.expense-actions .btn-editar,
+.expense-actions .btn-remover {
+    padding: 6px 10px;
+    min-width: 70px;
+    font-size: 0.85em;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.expense-actions .btn-editar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.85em;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.expense-actions .btn-editar:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.expense-actions .btn-remover {
+    background-color: #f44336;
+    color: white;
+    border-radius: 4px; /* Match the Editar button's border-radius */
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.expense-actions .btn-remover:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+}
+
+.warning-message {
+    background-color: #ff4444;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    animation: blink 1.5s infinite;
+    box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .card {
+        width: 95%;
+        padding: 30px 20px;
+    }
+    
+    .valor-mensal {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+    
+    .form-group input {
+        font-size: 1em;
+    }
+    
+    .expense-table {
+        font-size: 0.9em;
+    }
+    
+    .expense-table th,
+    .expense-table td {
+        padding: 10px;
+    }
+    
+    .btn-editar,
+    .btn-remover {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .logo-img {
+        max-height: 40px;
+    }
+}
